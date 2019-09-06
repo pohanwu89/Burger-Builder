@@ -16,13 +16,13 @@ const SideDrawer = (props) => {
       <Backdrop
         show={props.open}
         clicked={props.closed} />
-      <div className={attachedClasses.join(' ')}>
+      <div className={attachedClasses.join(' ')} onClick={props.closed}>
         <div className={styles.Logo}>
           <Logo />
         </div>
 
         <nav>
-          <NavigationItems />
+          <NavigationItems isAuthenticated={props.isAuth} />
           <div
             style={{
               color: "#8F5C2C",
@@ -33,7 +33,6 @@ const SideDrawer = (props) => {
             }}
             onClick={props.closed}
           >
-            close
           </div>
         </nav>
       </div>

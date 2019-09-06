@@ -22,9 +22,6 @@ function Burger(props) {
   if (transformedIngredients.length === 0) {
     transformedIngredients = <p>please add some ingredients</p>
   }
-  console.log(props.ingredients)
-  console.log(transformedIngredients)
-
   return (
     <div className={styles.Burger}>
       <BurgerIngredient type="bread-top" />
