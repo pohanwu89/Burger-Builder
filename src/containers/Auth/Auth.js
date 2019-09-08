@@ -133,12 +133,16 @@ class Auth extends Component {
     if (this.props.isAuth) {
       authRedirect = <Redirect to={this.props.authRedirectPath} />
     }
-
+    let formTitle = <p>Sign up</p>
+    if (!this.state.isSignup) {
+      formTitle = <p>Sign in</p>
+    }
     return (
       <div className={styles.Auth}>
         {authRedirect}
         {errorMessage}
         <form onSubmit={this.submitHandler}>
+          {formTitle}
           {form}
           <Button
             btnType="Success"
